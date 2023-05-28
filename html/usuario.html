@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/usuario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" type="imagex/png" href="/imagens/icon.png">
+    <title>CineShow - Usuários</title>
+    <script>
+        //função responsavel por limpar os campos selecionados atualizando a página
+        function Cancelar(){
+            location.reload();
+        }
+        //função responsavel por formatar os campos de cpf e telefone
+        function formatar(mascara, documento) {
+            let i = documento.value.length;
+            let saida = '#';
+            let texto = mascara.substring(i);
+            while (texto.substring(0, 1) != saida && texto.length ) {
+                documento.value += texto.substring(0, 1);
+                i++;
+                texto = mascara.substring(i);
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- Inicio do Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">
+            <img src="/imagens/icon.png" width="40" height="35">
+            <b>CineShow</b>
+        </a>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Bilhetes</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Clientes</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Filmes</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Salas</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Sessões</a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="#">Usuários</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- Fim do Navbar -->
+
+<!-- Inicio do conteudo da página-->
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <h2>Cadastro de Usuário</h2>
+        </div>
+        <div class="card-body">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome">
+
+            <label for="cargo">Cargo:</label>
+            <select class="form-control" id="cargo">
+                <option></option>
+                <option value="id_do_cargo1">Gerente</option>
+                <option value="id_do_cargo2">Funcionario</option>
+            </select>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" maxlength="15" OnKeyPress="formatar('(##) #####-####',this)">
+
+            <label for="senha">Senha:</label>
+            <input type="password" class="form-control" id="senha">
+
+            <div align="center">
+                <input type="button" class="btn btn-danger" value="Cancelar" onclick="Cancelar()">
+                <input type="button" class="btn btn-success" value="Cadastrar">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fim do conteudo da página -->
+
+<!-- Inicio do footer da página -->
+<footer class="bg-dark text-white" align="center">
+    Gabriel Negreiros, Gustavo César, Isabella Bicudo, Leonardo Aquino e Lucas Avelino - IFSP-Salto - 2023
+</footer>
+<!-- Fim do footer da página -->
+</body>
+</html>
