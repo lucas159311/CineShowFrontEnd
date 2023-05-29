@@ -4,29 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bilheteria.css">
+    <link rel="stylesheet" href="/css/sessao.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="shortcut icon" type="imagex/png" href="/imagens/icon.png">
-    <title>CineShow - Bilheteria</title>
-    <script>
-        var exibe = false;
-        //função que exibe ou esconde os assentos da sala de cinema
-        function Assentos(){
-            if(!exibe){
-                document.getElementById('exibeAssentos').innerHTML = '<img src="/imagens/assentos.png">';
-                exibe = true;
-            }else{
-                document.getElementById('exibeAssentos').innerHTML = '';
-                exibe = false;
-            }
-
-        }
-
-        //função responsavel por limpar os campos selecionados atualizando a página
-        function Cancelar(){
-            location.reload();
-        }
-    </script>
+    <title>CineShow - Sessão</title>
 </head>
 <body>
 <!-- Inicio do Navbar -->
@@ -64,18 +45,9 @@
 <div class="container">
     <div class="card">
         <div class="card-header bg-dark text-white">
-            <h2>Bilheteria</h2>
+            <h2>Cadastro de Filme</h2>
         </div>
         <div class="card-body">
-            <label for="cliente">Cliente:</label>
-            <select class="form-control" id="cliente">
-                <option></option>
-                <option value="id_do_cliente1">João Gomes</option>
-                <option value="id_do_cliente2">Roger Guedes</option>
-                <option value="id_do_cliente3">Cássio Ramos</option>
-                <option value="id_do_cliente4">Gabriel Jesus</option>
-                <option value="id_do_cliente5">Neymar Júnior</option>
-            </select>
 
             <label for="filme">Filme:</label>
             <select class="form-control" id="filme">
@@ -97,37 +69,12 @@
                 <option value="id_da_sala5">Sala E1</option>
             </select>
 
-            <label for="sessao">Sessão:</label>
-            <select class="form-control" id="sessao">
-                <option></option>
-                <option value="id_da_sessao1">16:00h</option>
-                <option value="id_da_sessao2">21:00h</option>
-                <option value="id_da_sessao3">23:45h</option>
-                <option value="id_da_sessao4">14:00h</option>
-            </select>
-<!-- Exibe assentos
-            <label for="assento">Assento:</label>
-            <select class="form-control" id="assento">
-                <option></option>
-                <option value="id_da_sessao1">C03</option>
-                <option value="id_da_sessao2">C04</option>
-                <option value="id_da_sessao3">H12</option>
-                <option value="id_da_sessao4">I04</option>
-                <option value="id_da_sessao1">J13</option>
-                <option value="id_da_sessao2">G01</option>
-                <option value="id_da_sessao3">A01</option>
-                <option value="id_da_sessao4">L02</option>
-            </select>
-            <div align="right">
-                <img src="/imagens/info.png" title="Visualizar Informações do Assento" onclick="Assentos()" width="40" height="40">
-            </div>
-            <div id="exibeAssentos" align="center">
-            </div>
--->
+            <label for="horario">Horário:</label>
+            <input type="time" class="form-control" id="horario">
 
             <div align="center">
                 <input type="button" class="btn btn-danger" value="Cancelar" onclick="Cancelar()">
-                <input type="button" class="btn btn-success" value="Vender">
+                <input type="button" class="btn btn-success" value="Cadastrar">
             </div>
         </div>
     </div>
